@@ -1,49 +1,29 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-
-
-
-
-
-import Register from "./components/Register";
+/* Importing components and pages */
 import NavBar from "./components/NavBar";
-import image from '../src/image/food.png'
-import Login from "./components/Login";
+
+
+import Home from "./pages/Home";
+import Login from './pages/Login';
 
 function App() {
   return (
-    < >
-     
-    <div   >
- 
-     
+    <div className="App">
     <Router>
-   
-    <Switch>
-      <Route path='/login' component={Login}/>
-      <Route path='/register' component={Register}/>
-    </Switch>
+    <NavBar/>
+      <Switch>
+        <Route path='/'exact component={Home} ></Route>
+        <Route path='/signin'component={Login}></Route>
+      </Switch>
 
-    <div  style={{backgroundImage: `url(${image})`,
-       backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh'
-          }}> <h1>
-            <NavBar/>
-          </h1>
 
-       
-     </div>
-  
-     </Router>
-    
-   
+    </Router>
+
     </div>
   
-    </>
-  );
+  )
+ 
 }
 
 export default App;
