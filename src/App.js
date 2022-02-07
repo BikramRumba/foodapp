@@ -7,6 +7,8 @@ import NavBar from "./components/NavBar";
 
 import Home from "./pages/Home";
 import Login from './pages/Login';
+import Register from "./pages/Register";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Switch>
         <Route path='/'exact component={Home} ></Route>
         <Route path='/signin'component={Login}></Route>
+        <Route path='/register' component={Register}></Route>
+        <Route path='/reset' component={ResetPassword}></Route>
       </Switch>
 
       <Footer/>
