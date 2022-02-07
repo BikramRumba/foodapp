@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 
 /* Importing components and pages */
 import NavBar from "./components/NavBar";
@@ -17,7 +18,7 @@ function App() {
         <Route path='/signin'component={Login}></Route>
       </Switch>
 
-
+      <Footer/>
     </Router>
 
     </div>
