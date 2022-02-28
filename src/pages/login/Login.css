@@ -1,40 +1,67 @@
-.signUp{
+.loginpage{
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: fantasy;
 }
-
-.sign-up{
-    height: 100%;
-    flex: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-form h1{
-   font-weight: 50;
-    font-size: 40px;
-    margin-left: 5px;
-    color: rgb(245, 255, 249);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 60vh;
-    height: 70vh;
-    padding: 30px;
+.login{
+    max-width: 400px;
+    margin: 5% auto;
     text-align: center;
-    border-radius: 3rem;
+    border: 1px solid rgb(39, 24, 24);
+    padding: 10px 50px 30px 30px;
+}
+
+.login h1{
+font-weight: bold;
+color: black;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.login label{
+    text-align: left;
+    display: block;
+    color: rgb(29, 14, 14);
+}
+.login input {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(139, 94, 94);
+    box-sizing: border-box;
+    display: block;
+}
+.login button {
+    width: 100%;
+    margin-top: 20px;
+    background: rgb(73, 76, 97);
+    color: white;
+    font-size: 1em;
+    border: 0;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+.login button:hover{
+    background: rgb(15, 25, 102);
+}
+
+/* form {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 1rem;
     border-style: solid;
     background-color: rgb(151, 134, 115);
 }
@@ -70,11 +97,10 @@ form label {
     font-weight: 10;
     color: black;
 }
-form button {
+ form  .button {
     margin-top: 40px;
     margin-left: 120px;
-    width: 120px;
-    height: 80px;
+    align-items: center;
     text-align: center;
     font-size: large;
     cursor: pointer;
@@ -83,8 +109,8 @@ form button {
 form button:hover{
     background-color: #121619;
     color: white;
-}
-.reset-password{
+} */
+/* .reset-password{
     text-align: center;
     justify-content: center;
     font-size: x-large;
@@ -98,4 +124,4 @@ form button:hover{
     font-size: x-large;
     color: #121619;
     background-color: rgb(215, 189, 189);
-}
+} */
