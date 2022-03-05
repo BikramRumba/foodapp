@@ -1,44 +1,22 @@
-// import React, { useState } from "react";
-// import { useEffect } from "react";
-// import { useContext } from "react";
-// /* We will be using firebase to provide infromation for
-// authentication *
+import { createContext, useState } from 'react';
 
-// const AuthContext = React.createContext()
+export const AuthContext = createContext();
 
-// export function useAuth(){
-//     return useContext(AuthContext)
-// }
+const AuthContextProvider = (props) => {
+	const [loggedIn, setLoggedIn] = useState(false);
 
+	const [user, setUser] = useState(null);
 
-// function AuthProvider({children}) {
-// const [currentUser, setCurrentUser] = useState();
+	const value = {
+		setLoggedIn,
+		loggedIn,
+		user,
+		setUser,
+	};
 
-//     function signup (name, email, password){
-//         return auth.createUserWithEmailAndPassword(name, email, password)
-//     }
+	return (
+		<AuthContext.Provider value={value}>{props.children}</AuthContext.Provider>
+	);
+};
 
-// useEffect(()=> {
-//     /* THis function will unsubscribe when we unmount this method */
-//    const unsubscribe = auth.onAuthStateChanged(user => {
-//         setCurrentUser(user)
-//     });
-//     return unsubscribe
-// }, [])
-    
-
-
-
-//     const value = {
-//         currentUser,
-//         signup
-//     }
-
-//   return(
-//       <AuthContext.Provider value={value}>
-//         {props.children}
-//       </AuthContext.Provider>
-//     );
-// }
-
-// export default AuthContextProvider;
+export default AuthContextProvider;

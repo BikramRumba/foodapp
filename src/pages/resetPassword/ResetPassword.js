@@ -18,7 +18,7 @@ function ResetPassword() {
         </form>
 
         <div className="new-account">
-          Remember Password <Link to='/signin' >Log In</Link>
+          Remember Password <Link to='/login' >Log In</Link>
         </div>
       </div>
   </div>

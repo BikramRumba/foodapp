@@ -22,13 +22,13 @@ function toggleClick (){
               </Link>
               {/* Creating adiv for small screen size */}
               <div className="hiddenLinks">
-              <Link to='/signin' >Sign In</Link>
+              <Link to='/login' >Log In</Link>
               <Link to='/about' >About Us</Link>
               <Link to='/gallery' >Gallery</Link>
               </div>
            </div>
            <div className="rightSide">
-              <Link to='/signin' >Sign In</Link>
+              <Link to='/login' >Log In</Link>
               <Link to='/about' >About Us</Link>
               <Link to='/gallery' >Gallery</Link>
               <button onClick={toggleClick}> 
