@@ -1,23 +1,24 @@
 import { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
+import { UserContext } from '../../contexts/UserContext';
 import '../register/Register.css';
 
+import axiosInstance from '../../axiosInstance';
+import image from '../../assets/jeri.jpeg';
 //user will register through this port
-const API_BASE_REGISTER = 'https://foodhub-api.herokuapp.com/auth/register';
+// const API_BASE_REGISTER = 'https://foodhub-api.herokuapp.com/auth/register';
 
 function Register() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const [passwordConfirm, setPasswordConfirm] = useState('');
+
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
-
 	const history = useHistory();
 
 	// we will be using context that we created to verify the login status
-	const { setLoggedIn, setUser } = useContext(AuthContext);
+	const { setLoggedIn, setUser } = useContext(UserContext);
 
 	// We will be validating user information through our backends.
 
@@ -25,49 +26,35 @@ function Register() {
 		e.preventDefault();
 		try {
 			setLoading(true);
-			const res = await fetch(API_BASE_REGISTER, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					username: name, //pasing the name,email and password from the form(frontend)
-					email: email,
-					password: password,
-				}),
+			const res = await axiosInstance.post('/auth/register', {
+				name,
+				email,
+				password,
 			});
-			console.log(res);
 
-			const data = await res.json();
-			console.log('Successfuld', data);
+			console.log('Register data', res.data);
 
-			if (!res.ok) {
-				setError(data.error);
-			}
-
-			if (res.ok) {
-				setError(null);
-				setLoggedIn(true);
-				setUser(data);
-				return history.push('/login');
-			}
+			setError(null);
+			setLoggedIn(true);
+			setUser(res.data.token);
+			return history.push('/');
 		} catch (error) {
 			setError(error.message);
 		}
+		setLoading(false);
 	};
-
 	return (
-		<div className='registerPage'>
-			{error && <div>{error}</div>}
+		<div className='registerPage' style={{ backgroundImage: `url(${image})` }}>
+			{error && <div className='error-message'>{error}</div>}
 			<div className='register'>
-				<form onSubmit={handleSubmitRegister}>
+				<form>
 					<h1>Register an account </h1>
 					<label>Full Name</label>
 
 					<input
 						type='text'
 						name='name'
-						placeholder='first name last name'
+						placeholder='username'
 						required
 						onChange={(e) => setName(e.target.value)}
 					/>
@@ -90,18 +77,15 @@ function Register() {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 
-					<label> Password Confirmation</label>
-
-					<input
-						type='password'
-						required
-						placeholder='Confirm password'
-						onChange={(e) => setPasswordConfirm(e.target.value)}
-					/>
+					<label htmlFor='nationality'> Nationality</label>
+					<select name='nationality' id='nationality'>
+						<option value='nepali'>Nepali</option>
+						<option value='other'>Other</option>
+					</select>
 
 					<button
 						disabled={loading}
-						//</form>onClick={handleSubmitRegister}
+						onClick={handleSubmitRegister}
 						type='submit'>
 						Register
 					</button>

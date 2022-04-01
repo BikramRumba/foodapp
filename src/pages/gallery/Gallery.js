@@ -1,13 +1,11 @@
-import React from 'react'
-import '../gallery/Gallery.css'
-import seasoning from '../../assets/seasoning.jpeg'
+import React from 'react';
+import '../gallery/Gallery.css';
+import thali from '../../assets/thali.avif';
 
 export default function Gallery() {
-  return (
-    <div className='galleryPage'  style={{backgroundImage: `url(${seasoning})` }}>
-      <div className='gallery'>
-
-      </div>
-    </div>
-  )
+	return (
+		<div className='galleryPage' style={{ backgroundImage: `url(${thali})` }}>
+			<div className='gallery'></div>
+		</div>
+	);
 }

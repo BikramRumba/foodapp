@@ -1,0 +1,31 @@
+.create-restaurant-form {
+	max-width: 400px;
+	margin: 8% auto;
+	text-align: center;
+	border: 1px solid black;
+	padding: 10px 50px 30px 30px;
+	display: block;
+}
+.create-restaurant-form label,
+.create-restaurant-form input {
+	width: 100%;
+	padding: 6px 10px;
+	margin: 6px 0;
+	box-sizing: border-box;
+	display: block;
+}
+
+.create-restaurant-form button {
+	width: 100%;
+	margin-top: 10px;
+	background-color: aliceblue;
+	font-size: 1em;
+	border: 0;
+	padding: 8px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.create-restaurant-form button:hover {
+	background-color: rgb(200, 215, 228);
+}

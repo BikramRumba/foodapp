@@ -1,23 +1,44 @@
-import image from '../../assets/food.png'
-import '../home/Home.css'
+import { useContext, useState } from 'react';
+import image from '../../assets/food.avif';
+import '../home/Home.css';
+import axiosInstance from '../../axiosInstance';
+import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
 
 function Home() {
-  return (
-    <div className="home"  style={{backgroundImage: `url(${image})`}}>
-      <div className="search">
-      <form >
-       <label htmlFor="searchRestaurant">
-        Search Restaurant
-       </label>
-       <input type="text" 
-          id='searchRestaurant'
-          placeholder='Search by name'
-         />
-         <button>Search</button>
-     </form>
-  </div>
-  </div>
-  );
+	const [name, setName] = useState('');
+	const [restaurant, setRestaurant] = useState([]);
+	const history = useHistory();
+
+	const searchRestaurant = async (e) => {
+		e.preventDefault();
+		// const response = await axiosInstance.get('/search');
+		// setRestaurant(response.data);
+
+		history.push(`/search?name=${name}`);
+	};
+	return (
+		<div className='home' style={{ backgroundImage: `url(${image})` }}>
+			<div></div>
+			<div className='search'>
+				<form>
+					<label>Search Restaurant</label>
+					<input
+						type='text'
+						placeholder='Search by name'
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
+					<button onClick={searchRestaurant}>Search</button>
+				</form>
+				{restaurant.map((value, key) => (
+					<div key={key} className='restaurant-search-result'>
+						{value.name}
+					</div>
+				))}
+			</div>
+		</div>
+	);
 }
 
 export default Home;

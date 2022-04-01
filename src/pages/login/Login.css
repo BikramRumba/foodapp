@@ -1,58 +1,61 @@
-.loginpage{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: fantasy;
+.loginpage {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: left;
+	flex-direction: column;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: fantasy;
 }
-.login{
-    max-width: 400px;
-    margin: 5% auto;
-    text-align: center;
-    border: 1px solid rgb(39, 24, 24);
-    padding: 10px 50px 30px 30px;
+.login {
+	max-width: 400px;
+	margin: 5% auto;
+	text-align: center;
+	background-color: rgb(251, 248, 248);
+	border: 1px solid rgb(39, 24, 24);
+	padding: 10px 50px 30px 30px;
 }
 
-.login h1{
-font-weight: bold;
-color: black;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+.login h1 {
+	font-weight: bold;
+	color: black;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.login label{
-    text-align: left;
-    display: block;
-    color: rgb(29, 14, 14);
+.login label {
+	text-align: left;
+	font-size: x-large;
+	display: block;
+	color: rgb(29, 14, 14);
 }
 .login input {
-    width: 100%;
-    padding: 6px 10px;
-    margin: 10px 0;
-    border: 1px solid rgb(139, 94, 94);
-    box-sizing: border-box;
-    display: block;
+	width: 100%;
+	padding: 6px 10px;
+	margin: 10px 0;
+	border: 1px solid rgb(173, 144, 144);
+	box-sizing: border-box;
+	display: block;
 }
 .login button {
-    width: 100%;
-    margin-top: 20px;
-    background: rgb(73, 76, 97);
-    color: white;
-    font-size: 1em;
-    border: 0;
-    padding: 8px;
-    border-radius: 3px;
-    cursor: pointer;
-
+	width: 100%;
+	margin-top: 20px;
+	background: rgb(73, 76, 97);
+	color: white;
+	font-size: 1em;
+	border: 0;
+	padding: 8px;
+	border-radius: 3px;
+	cursor: pointer;
 }
-.login button:hover{
-    background: rgb(15, 25, 102);
+.login button:hover {
+	background: rgb(15, 25, 102);
 }
-
+.reset-password,
+.new-account {
+	font-size: large;
+}
 /* form {
     justify-self: center;
     display: flex;
@@ -124,4 +127,4 @@ form button:hover{
     font-size: x-large;
     color: #121619;
     background-color: rgb(215, 189, 189);
-} */
+} */ ;
